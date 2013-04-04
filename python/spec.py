@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys, math
 try:
-    infilename = sys.argv[1]; outfilename = sys.argv[2]
+    infilename = sys.argv[1]; outfilename = sys.argv[2];
 except:
     print "Usage:",sys.argv[0], "infile outfile"; sys.exit(1)
 ifile = open( infilename, 'r') # open file for reading
@@ -34,3 +34,17 @@ for x_current, height in spectrum.iteritems():
 
 print spectrum
 
+import subprocess
+plot = subprocess.Popen(['gnuplot', '-p'], shell=True, stdin=subprocess.PIPE)
+##plot.stdin.write('set xrange [0:10]; set yrange [-2:2]\n')
+##plot.stdin.write('plot sin(x)\n')
+##plot.stdin.write('quit\n')
+plot.communicate("""
+plot 'out.txt' u 1:2
+pause 20
+""")
+##plot.stdin.write("plot '%s' u 1:2 " % (outfilename))
+##plot.stdin.write("pause 6")
+#plot.communicate("set terminal jpeg\n")
+#plot.communicate("set output '%s'\n" % (outjpgname))
+#plot.communicate("plot '%s' u 1:2\n" % (outfilename))
