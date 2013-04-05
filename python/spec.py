@@ -75,7 +75,7 @@ plot = subprocess.Popen(['gnuplot', '-p'], shell=True, stdin=subprocess.PIPE)
 ##plot.stdin.write('quit\n')
 plot.communicate("""
 plot 'out.txt' u 1:2
-pause 2
+pause 60
 """) #usare vairabile ofile
 ##plot.stdin.write("plot '%s' u 1:2 " % (outfilename))
 ##plot.stdin.write("pause 6")
