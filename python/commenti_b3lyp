@@ -1,0 +1,2 @@
+linea 1037	ho le energie dei vari orbitali e contando i primi 29 vedo che la differenza HOMO-LUMO è calcolata correttamente
+		ma a quessta differenza di 0.2088 non corrispondono energie di eccitazione! (da linea 1446 in poi)

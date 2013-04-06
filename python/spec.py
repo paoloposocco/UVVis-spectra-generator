@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 import sys, math
 try:
-    infilename = sys.argv[1]; outfilename = sys.argv[2];
+    infilename = sys.argv[1]; #outfilename = sys.argv[2];
 except:
     print "Usage:",sys.argv[0], "infile outfile"; sys.exit(1)
 ifile = open( infilename, 'r') # open file for reading
-ofile = open(outfilename, 'w') # open file for writing
+ofile = open('out.txt', 'w') # open file for writing
+##ofile = open(outfilename, 'w') # open file for writing
 def lorentz2(x_current, x_center, fwhm, height):
     return height/(1.0+((x_current-x_center)/fwhm)**2.0)
 lines = ifile.readlines()
